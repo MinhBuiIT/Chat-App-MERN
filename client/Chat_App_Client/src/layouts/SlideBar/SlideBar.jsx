@@ -90,7 +90,7 @@ const SlideBar = () => {
               </Backdrop>
             }
           >
-            <Modal open={isOpenSearch} handleClose={openSearch}>
+            <Modal open={isOpenSearch} handleClose={openSearch} width={'400px'}>
               <Search></Search>
             </Modal>
           </Suspense>,
@@ -105,8 +105,8 @@ const SlideBar = () => {
               </Backdrop>
             }
           >
-            <Modal open={isOpenAddGroup} handleClose={openAddGroup}>
-              <AddGroup></AddGroup>
+            <Modal open={isOpenAddGroup} handleClose={openAddGroup} width={'420px'}>
+              <AddGroup handleClose={openAddGroup}></AddGroup>
             </Modal>
           </Suspense>,
           document.body
@@ -120,7 +120,7 @@ const SlideBar = () => {
               </Backdrop>
             }
           >
-            <Modal open={isOpenNotification} handleClose={openNotification}>
+            <Modal open={isOpenNotification} handleClose={openNotification} sx={{ width: '500px' }}>
               <Notification></Notification>
             </Modal>
           </Suspense>,

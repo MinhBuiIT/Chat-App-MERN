@@ -1,4 +1,4 @@
-import { Badge, IconButton, styled } from '@mui/material';
+import { Badge, IconButton, TextField, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 import COLOR from '../../constants/color';
 
@@ -55,10 +55,29 @@ const StyledLink = styled(Link)({
     backgroundColor: 'rgba(251,244,251,1)'
   }
 });
+const TextFieldCustom = styled(TextField)({
+  '& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': {
+    padding: '10px 8px'
+  }
+});
+const IconButtonCustom = styled(IconButton)({
+  background: COLOR.PINK_LIGHT,
+  '&:hover': {
+    background: COLOR.PINK,
+    '.MuiSvgIcon-root': {
+      color: '#fff'
+    }
+  },
+  '& .MuiSvgIcon-root': {
+    color: COLOR.PINK
+  }
+});
 const Styling = {
   VisualInput,
   IconButtonHeader,
   StyledBadge,
-  StyledLink
+  StyledLink,
+  TextFieldCustom,
+  IconButtonCustom
 };
 export default Styling;

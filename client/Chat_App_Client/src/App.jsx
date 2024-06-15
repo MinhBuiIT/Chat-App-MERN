@@ -29,7 +29,16 @@ function App() {
                 <Chat />
               </ProtectRoute>
             }
-          ></Route>
+          >
+            <Route
+              path={RoutePath.chatId}
+              element={
+                <ProtectRoute isAuth={isAuth}>
+                  <Chat />
+                </ProtectRoute>
+              }
+            ></Route>
+          </Route>
           <Route
             path={RoutePath.login}
             element={

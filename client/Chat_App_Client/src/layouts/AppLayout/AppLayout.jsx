@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import ChatList from '../../components/ChatList';
+import Info from '../../components/Info/Info';
 import { chatList } from '../../lib/sampleData';
 import SlideBar from '../SlideBar';
 
@@ -62,7 +63,11 @@ const AppLayout = () => (ComponetChild) => {
           lg={3}
           sx={{ display: { xs: 'none', md: 'block' }, height: { xs: 'calc(100% - 3rem)', md: '100%' } }}
         >
-          <div>Info</div>
+          <Info
+            linkImg={'https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg'}
+            name={'Minh Bui Dev'}
+            username={'minhbuidev'}
+          />
         </Grid>
       </Grid>
     );

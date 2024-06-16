@@ -43,7 +43,7 @@ const AppLayout = () => (ComponetChild) => {
         <Grid
           item
           sm={4}
-          md={2}
+          md={3}
           lg={3}
           sx={{
             display: { xs: 'none', sm: 'block' },
@@ -53,15 +53,14 @@ const AppLayout = () => (ComponetChild) => {
         >
           <ChatList chatList={chatList} newMessageAlert={[{ _id: 1, count: 3 }]} onlineList={[1, 2, 3, 4, 5]} />
         </Grid>
-        <Grid item xs={12} sm={8} md={7} lg={5.5} sx={{ height: { xs: 'calc(100% - 3rem)', md: '100%' } }}>
+        <Grid item xs={12} sm={8} md={8} lg={5.5} sx={{ height: { xs: 'calc(100% - 3rem)', md: '100%' } }}>
           <ComponetChild {...props} />
         </Grid>
 
         <Grid
           item
-          md={2}
           lg={3}
-          sx={{ display: { xs: 'none', md: 'block' }, height: { xs: 'calc(100% - 3rem)', md: '100%' } }}
+          sx={{ display: { xs: 'none', lg: 'block' }, height: { xs: 'calc(100% - 3rem)', md: '100%' } }}
         >
           <Info
             linkImg={'https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg'}

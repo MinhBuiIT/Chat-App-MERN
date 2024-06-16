@@ -1,7 +1,7 @@
 const RoutePath = {
   home: '/',
   login: '/login',
-  chat: '/chat',
-  chatId: ':id'
+  chatId: '/chat/:id',
+  group: '/group'
 };
 export default RoutePath;

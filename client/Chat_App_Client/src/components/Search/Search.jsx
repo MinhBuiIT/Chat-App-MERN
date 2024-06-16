@@ -1,11 +1,11 @@
-import AddOutlined from '@mui/icons-material/AddOutlined';
-import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import { Avatar, Box, List, ListItem, Stack, Typography } from '@mui/material';
-import { memo, useState } from 'react';
+import CheckOutlined from '@mui/icons-material/CheckOutlined';
+import { Box, List, Typography } from '@mui/material';
+import { useState } from 'react';
 import { userData } from '../../lib/sampleData';
+import ItemUser from '../ItemUser';
 import Styling from '../Styling';
 
-const { TextFieldCustom, IconButtonCustom } = Styling;
+const { TextFieldCustom } = Styling;
 const Search = () => {
   const [friendReqList, setFriendReqList] = useState([]);
   const hanldeAddRequestFriend = (_id) => {
@@ -28,8 +28,9 @@ const Search = () => {
             <ItemUser
               key={user._id}
               user={user}
-              hanldeAddRequestFriend={hanldeAddRequestFriend}
+              handler={hanldeAddRequestFriend}
               isAdded={friendReqList.includes(user._id)}
+              IconChange={CheckOutlined}
             />
           );
         })}
@@ -37,19 +38,5 @@ const Search = () => {
     </Box>
   );
 };
-const ItemUser = memo(({ user, hanldeAddRequestFriend, isAdded }) => {
-  return (
-    <ListItem>
-      <Stack direction={'row'} alignItems={'center'} width={'100%'}>
-        <Avatar src={user.avatar} sx={{ width: '40px', height: '40px' }} />
-        <Typography variant="body1" flexGrow={1} ml={1}>
-          {user.name}
-        </Typography>
-        <IconButtonCustom onClick={() => hanldeAddRequestFriend(user._id)}>
-          {isAdded ? <CheckOutlinedIcon /> : <AddOutlined />}
-        </IconButtonCustom>
-      </Stack>
-    </ListItem>
-  );
-});
+
 export default Search;

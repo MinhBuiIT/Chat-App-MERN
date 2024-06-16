@@ -6,9 +6,11 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Avatar, Backdrop, Box, CircularProgress, Stack, Tooltip } from '@mui/material';
 import { Suspense, lazy, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal';
 import Styling from '../../components/Styling';
 import COLOR from '../../constants/color';
+import RoutePath from '../../constants/route';
 
 const Search = lazy(() => import('../../components/Search'));
 const Notification = lazy(() => import('../../components/Notification'));
@@ -16,6 +18,7 @@ const AddGroup = lazy(() => import('../../components/AddGroup'));
 const Logout = lazy(() => import('../../components/Logout'));
 const { IconButtonHeader } = Styling;
 const SlideBar = () => {
+  const navigate = useNavigate();
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenAddGroup, setIsOpenAddGroup] = useState(false);
   const [isOpenNotification, setIsOpenNotification] = useState(false);
@@ -27,7 +30,7 @@ const SlideBar = () => {
     setIsOpenAddGroup((pre) => !pre);
   };
   const openManageGroup = () => {
-    console.log('Manage Group');
+    navigate(RoutePath.group);
   };
   const openNotification = () => {
     setIsOpenNotification((pre) => !pre);

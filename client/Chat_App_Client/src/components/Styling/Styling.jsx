@@ -1,4 +1,5 @@
-import { Badge, IconButton, TextField, styled } from '@mui/material';
+import { Badge, IconButton, Stack, TextField, styled } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import COLOR from '../../constants/color';
 
@@ -72,12 +73,60 @@ const IconButtonCustom = styled(IconButton)({
     color: COLOR.PINK
   }
 });
+const IconButtonSendCustom = styled(IconButton)({
+  background: COLOR.PINK,
+  '&:hover': {
+    background: COLOR.PINK,
+    '.MuiSvgIcon-root': {
+      color: '#fff'
+    }
+  },
+  '& .MuiSvgIcon-root': {
+    color: '#fff'
+  }
+});
+const InputCustomText = styled('textarea')({
+  border: 'none',
+  outline: 'none',
+  fontSize: '16px',
+  color: grey[600],
+  fontWeight: 400,
+  resize: 'none',
+  paddingTop: '20px',
+  fontFamily: 'Arial, sans-serif'
+});
+const StackScroll = styled(Stack)({
+  overflowX: 'hidden',
+  overflowY: 'scroll',
+  /* width */
+  '&::-webkit-scrollbar': {
+    width: '10px'
+  },
+
+  /* Track */
+  '&::-webkit-scrollbar-track': {
+    background: COLOR.GREY_LIGHT
+  },
+
+  /* Handle */
+  '&::-webkit-scrollbar-thumb': {
+    background: '#888'
+  },
+
+  /* Handle on hover */
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: '#555'
+  }
+});
 const Styling = {
   VisualInput,
   IconButtonHeader,
   StyledBadge,
   StyledLink,
   TextFieldCustom,
-  IconButtonCustom
+  IconButtonCustom,
+  InputCustomText,
+  IconButtonSendCustom,
+  StackScroll
 };
 export default Styling;

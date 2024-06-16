@@ -1,13 +1,13 @@
-import AddOutlined from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import { Avatar, Box, Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { Box, Button, List, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import COLOR from '../../constants/color';
 import { userData } from '../../lib/sampleData';
+import ItemUser from '../ItemUser';
 import Styling from '../Styling';
 
-const { TextFieldCustom, IconButtonCustom } = Styling;
+const { TextFieldCustom } = Styling;
 const AddGroup = ({ handleClose }) => {
   const [nameGroup, setNameGroup] = useState('');
   const [addUserList, setAddUserList] = useState([]);
@@ -45,8 +45,9 @@ const AddGroup = ({ handleClose }) => {
             <ItemUser
               key={user._id}
               user={user}
-              handleAddUserGroup={handleAddUserGroup}
+              handler={handleAddUserGroup}
               isAdded={addUserList.includes(user._id)}
+              IconChange={RemoveOutlinedIcon}
             />
           );
         })}
@@ -78,19 +79,5 @@ const AddGroup = ({ handleClose }) => {
     </Box>
   );
 };
-const ItemUser = memo(({ user, handleAddUserGroup, isAdded }) => {
-  return (
-    <ListItem>
-      <Stack direction={'row'} alignItems={'center'} width={'100%'}>
-        <Avatar src={user.avatar} sx={{ width: '40px', height: '40px' }} />
-        <Typography variant="body1" flexGrow={1} ml={1}>
-          {user.name}
-        </Typography>
-        <IconButtonCustom onClick={() => handleAddUserGroup(user._id)}>
-          {isAdded ? <RemoveOutlinedIcon /> : <AddOutlined />}
-        </IconButtonCustom>
-      </Stack>
-    </ListItem>
-  );
-});
+
 export default AddGroup;

@@ -5,7 +5,7 @@ import COLOR from '../../constants/color';
 import AvatarGroup from '../AvatarGroup/AvatarGroup';
 import Styling from '../Styling';
 
-const { StyledBadge, StyledLink } = Styling;
+const { StyledBadge, StyledLink, TypographyCustomDot } = Styling;
 const ChatItem = ({ chatId, newMessageCount, avatar = [], isGroup = false, isOnline, name }) => {
   const { id } = useParams();
   return (
@@ -23,9 +23,9 @@ const ChatItem = ({ chatId, newMessageCount, avatar = [], isGroup = false, isOnl
           <Typography variant="h6" fontWeight={500}>
             {name}
           </Typography>
-          <Typography fontSize={12} fontWeight={400} color={grey[700]}>
+          <TypographyCustomDot fontSize={12} fontWeight={400} color={grey[700]}>
             Hôm nay bạn như thế nào?
-          </Typography>
+          </TypographyCustomDot>
         </Box>
         {newMessageCount !== 0 && (
           <Box

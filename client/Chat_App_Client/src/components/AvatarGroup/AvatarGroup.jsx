@@ -1,8 +1,8 @@
 import Avatar from '@mui/material/Avatar';
 import AvatarGroupMui from '@mui/material/AvatarGroup';
-const AvatarGroup = ({ avatar }) => {
+const AvatarGroup = ({ avatar, max = 3 }) => {
   return (
-    <AvatarGroupMui max={3} spacing={'small'}>
+    <AvatarGroupMui max={max} spacing={'small'}>
       {avatar.map((item) => {
         return <Avatar key={item} src={item} />;
       })}

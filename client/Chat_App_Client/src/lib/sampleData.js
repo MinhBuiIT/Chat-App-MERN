@@ -120,3 +120,101 @@ export const messageData = [
     created_At: '2024-06-16T02:52:16.978Z'
   }
 ];
+export const rows = {
+  users: [
+    {
+      _id: 1,
+      name: 'Vũ Huyền',
+      username: 'Vu Huyen',
+      friends: 10,
+      groups: 2,
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KFpyTAbxUOUtC1mrtahi2prM757NKVVP6Q&s'
+    },
+    {
+      _id: 2,
+      name: 'Trần Hoàng Anh',
+      username: 'Tran Hoang Anh',
+      friends: 20,
+      groups: 3,
+      avatar: 'https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg'
+    },
+    {
+      _id: 3,
+      name: 'Nguyễn Tín',
+      username: 'Nguyen Tin',
+      friends: 30,
+      groups: 4,
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMW45At2aq1Cw27Whi0z4JIgqvvYBfq9bOwg&s'
+    }
+  ],
+  groups: [
+    {
+      _id: 1,
+      name: 'Group Cầu Lông',
+      avatars: [
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KFpyTAbxUOUtC1mrtahi2prM757NKVVP6Q&s',
+        'https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg',
+        'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg'
+      ],
+      totalMember: 10,
+      members: [
+        {
+          name: 'Vũ Huyền',
+          avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KFpyTAbxUOUtC1mrtahi2prM757NKVVP6Q&s'
+        },
+        {
+          name: 'Trần Hoàng Anh',
+          avatar: 'https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg'
+        }
+      ],
+      totalMessage: 200,
+      creater: {
+        name: 'Vũ Huyền',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KFpyTAbxUOUtC1mrtahi2prM757NKVVP6Q&s'
+      }
+    }
+  ],
+  messages: [
+    {
+      _id: 'ancknanka',
+      attchments: [{ url: 'https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/enhancer/2.jpg', type: 'image' }],
+      sender: {
+        name: 'Vũ Huyền',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KFpyTAbxUOUtC1mrtahi2prM757NKVVP6Q&s'
+      },
+      messageContent: 'Hello a',
+      chatId: 'vnkanclan',
+      isGroup: false,
+      create: '2024-06-16T02:52:16.978Z'
+    },
+    {
+      _id: 'vbakbab',
+      attchments: [],
+      sender: {
+        name: 'Minh Bui Dev',
+        avatar: 'https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg'
+      },
+      messageContent: 'Hello e',
+      chatId: 'vnkanclan',
+      isGroup: false,
+      create: '2024-06-16T02:52:16.978Z'
+    },
+    {
+      _id: 'vnakda',
+      attchments: [
+        {
+          url: 'https://www.shutterstock.com/shutterstock/videos/1080649061/preview/stock-footage-aerial-drone-view-over-vineyards-towards-agricultural-fields-during-sunset.webm',
+          type: 'video'
+        }
+      ],
+      sender: {
+        name: 'Minh Bui Dev',
+        avatar: 'https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg'
+      },
+      messageContent: '',
+      chatId: 'vnkanclan',
+      isGroup: false,
+      create: '2024-06-16T02:52:16.978Z'
+    }
+  ]
+};

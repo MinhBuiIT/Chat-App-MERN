@@ -42,18 +42,17 @@ const AppLayout = () => (ComponetChild) => {
         </Grid>
         <Grid
           item
-          sm={4}
           md={3}
           lg={3}
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', md: 'block' },
             height: { xs: 'calc(100% - 3rem)', md: '100%' },
             borderRight: `1px solid ${grey[300]}`
           }}
         >
           <ChatList chatList={chatList} newMessageAlert={[{ _id: 1, count: 3 }]} onlineList={[1, 2, 3, 4, 5]} />
         </Grid>
-        <Grid item xs={12} sm={8} md={8} lg={5.5} sx={{ height: { xs: 'calc(100% - 3rem)', md: '100%' } }}>
+        <Grid item xs={12} sm={12} md={8} lg={5.5} sx={{ height: { xs: 'calc(100% - 3rem)', md: '100%' } }}>
           <ComponetChild {...props} />
         </Grid>
 

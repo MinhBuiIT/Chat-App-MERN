@@ -1,4 +1,4 @@
-import { Badge, IconButton, Stack, TextField, styled } from '@mui/material';
+import { Badge, IconButton, List, Stack, TextField, Typography, styled } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import COLOR from '../../constants/color';
@@ -118,6 +118,44 @@ const StackScroll = styled(Stack)({
     background: '#555'
   }
 });
+const ListScroll = styled(List)({
+  overflowX: 'hidden',
+  overflowY: 'scroll',
+  /* width */
+  '&::-webkit-scrollbar': {
+    width: '10px'
+  },
+
+  /* Track */
+  '&::-webkit-scrollbar-track': {
+    background: COLOR.GREY_LIGHT
+  },
+
+  /* Handle */
+  '&::-webkit-scrollbar-thumb': {
+    background: '#888'
+  },
+
+  /* Handle on hover */
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: '#555'
+  }
+});
+const TypographyCustomDot = styled(Typography)({
+  display: 'block',
+  maxWidth: '150px',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis'
+});
+const InputCustomCicrle = styled('input')({
+  padding: '12px 16px',
+  borderRadius: '100px',
+  border: 'none',
+  outline: 'none',
+  background: grey[200],
+  color: grey[600]
+});
 const Styling = {
   VisualInput,
   IconButtonHeader,
@@ -127,6 +165,9 @@ const Styling = {
   IconButtonCustom,
   InputCustomText,
   IconButtonSendCustom,
-  StackScroll
+  StackScroll,
+  ListScroll,
+  TypographyCustomDot,
+  InputCustomCicrle
 };
 export default Styling;

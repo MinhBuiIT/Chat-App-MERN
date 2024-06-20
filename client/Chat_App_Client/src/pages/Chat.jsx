@@ -1,26 +1,31 @@
 import FileIcon from '@mui/icons-material/AttachFile';
 import AudioFileOutlinedIcon from '@mui/icons-material/AudioFileOutlined';
 import BrokenImageOutlinedIcon from '@mui/icons-material/BrokenImageOutlined';
+import MenuOutlined from '@mui/icons-material/MenuOutlined';
 import SendOutlined from '@mui/icons-material/SendOutlined';
 import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
-import { Avatar, Box, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Drawer, IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import { useRef, useState } from 'react';
+import ChatItem from '../components/ChatItem';
 import MessageItem from '../components/MessageItem';
 import Styling from '../components/Styling';
 import COLOR from '../constants/color';
 import AppLayout from '../layouts/AppLayout/AppLayout';
-import { messageData } from '../lib/sampleData';
+import { chatList, messageData } from '../lib/sampleData';
 
 const isOnlineReceiver = false; //fetch data
 const _idUser = 100; //fetch data
+const newMessageAlert = [{ _id: 1, count: 3 }]; //fetch data
+const onlineList = [1, 2, 3, 4, 5]; //fetch data
 const { StyledBadge, InputCustomText, IconButtonSendCustom, StackScroll } = Styling;
 const Chat = () => {
   const [isOpenMenuFile, setIsOpenMenuFile] = useState(false);
+  const [isOpenMenuMobile, setIsOpenMenuMobile] = useState(false);
   const anchorElFile = useRef(null);
   return (
-    <Stack direction={'column'} height={'100vh'} position={'relative'} width={'100%'}>
+    <Stack direction={'column'} height={'100%'} position={'relative'} width={'100%'}>
       <Box height={'3.7rem'} sx={{ boxShadow: '0px 0px 6px 0px rgba(0,0,0,0.15)', left: '0px', right: '0px' }}>
         <Stack padding={'12px'} alignItems={'center'} spacing={1} direction={'row'}>
           <StyledBadge
@@ -43,6 +48,42 @@ const Chat = () => {
               </Typography>
             )}
           </Stack>
+          <Box sx={{ flexGrow: 1, textAlign: 'end', display: 'flex', justifyContent: 'end' }}>
+            <IconButton
+              onClick={() => setIsOpenMenuMobile((pre) => !pre)}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                alignSelf: 'end',
+                textAlign: 'end'
+              }}
+            >
+              <MenuOutlined sx={{ color: '#000' }} />
+            </IconButton>
+            <Drawer
+              open={isOpenMenuMobile}
+              onClose={() => setIsOpenMenuMobile(false)}
+              sx={{ width: { xs: '70vw', sm: '50vw' } }}
+            >
+              {chatList.map((chat) => {
+                const { name, avatar, isGroup, _id, members } = chat;
+                const newMessageCount = newMessageAlert.find((messageObj) => messageObj._id === _id)?.count ?? 0;
+                const isOnline = members.some((member) => {
+                  return onlineList.includes(member);
+                });
+                return (
+                  <ChatItem
+                    key={_id}
+                    name={name}
+                    avatar={avatar}
+                    isGroup={isGroup}
+                    chatId={_id}
+                    isOnline={isOnline}
+                    newMessageCount={newMessageCount}
+                  ></ChatItem>
+                );
+              })}
+            </Drawer>
+          </Box>
         </Stack>
       </Box>
       <StackScroll flexGrow={1} direction={'column-reverse'} padding={'0px 10px'} sx={{ background: COLOR.GREY_LIGHT }}>
